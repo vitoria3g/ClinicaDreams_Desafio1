@@ -1,0 +1,49 @@
+img{
+  width: 30.7%;
+}
+
+#logoImage{
+  width: 100%;
+}
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
+
+.logon-container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   
+}
+
+.logon-container section.form {
+  width: 100%;
+  max-width: 350px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 15%;
+}
+
+.logon-container section.form form {
+  margin-top: 100px;
+}
+
+.logon-container section.form form h1 {
+  font-size: 32px;
+  margin-bottom: 32px;
+
+}
+

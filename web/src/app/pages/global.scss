@@ -1,0 +1,115 @@
+@import '~antd/dist/antd.css';
+
+* { 
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font: 400 14px Roboto, sans-serif;
+    background: linear-gradient(rgb(128, 0, 128), rgb(255, 192, 203));
+    -webkit-font-smoothing: antialiased;
+}
+
+input, textarea, button{
+    font: 400 18px Roboto, sans-serif;
+}
+
+button{
+    cursor: pointer;
+}
+
+form input, select, .InputNumber {
+    width: 100%;
+    height: 60px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+}
+
+form textarea{
+    width: 100%;
+    height: 140px;
+    resize: vertical; 
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 16px 24px;
+    line-height: 24px;
+}
+
+.button {
+    width: 100%;
+    height: 60px;
+    background: #6d3ed8;
+    border: 0;
+    border-radius: 8px;
+    color: #FFF;
+    font-weight: 700;
+    margin-top: 16px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    transition: filter 0.2s;
+}
+
+.button:hover {
+    background: #6f36f1;
+    filter: brightness(90%);
+}
+
+.back-link  {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    color: #41414d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.back-link :hover {
+    opacity: 0.8;
+}
+
+/*Icone*/
+.back-link svg {
+    margin-right: 8px;
+}
+
+.btn {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+    
+    &:hover {
+      background-color: lighten(black, 5%);
+    }
+    
+    &:focus {
+      outline: 1px dashed yellow;
+      outline-offset: 3px;
+    }
+  }
+
+  .loading {
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    margin: 20px 0;
+  }

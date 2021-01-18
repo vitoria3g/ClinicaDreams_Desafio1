@@ -1,4 +1,4 @@
-#Proposta
+# PROPOSTA
 Um cliente através do seu login e senha,  deseja ser atendido em uma clínica para realizar alguns serviços, cada serviço tem um valor especifico (em R$) e uma quantidade de minutos a ser realizados e pode ser atendido por um profissional, esse profissional recebe uma comissão percentual pela realização do serviço.
 
 Com essas informações você irá construir um fluxo de atendimento permitindo que sejam adicionados em um atendimento um ou mais serviços com seus respectivos valores com a informação dos valores individuais de cada serviço e o total a ser pago.  
@@ -7,7 +7,7 @@ Após os serviços adicionados o atendente poderá iniciar e depois finalizar o 
 
 Ao finalizar deverá exibir um resumo do atendimento com a duração total e o valor da comissão que o profissional irá receber pelo atendimento.
 
-#Sistema
+# SISTEMA
 - [x]  Criar usuário
 - [x]  Atualizar usuário (Se não for um admin pedir senha) - IMPLEMENTAÇÃO WEB (API já possui função)
 - [x]  Desativar usuário - IMPLEMENTAÇÃO WEB (API já possui função)
@@ -33,16 +33,16 @@ Ao finalizar deverá exibir um resumo do atendimento com a duração total e o v
 - [x]  Prévia do valor da comissão do atendimento completo de acordo com o cliente
 - [x]  Visualizar serviços relacionados ao representante
 
-#Comandos
-##WEBPACK
+# COMANDOS
+## WEBPACK
 → Comando produção: npm run build
 → Comando ambiente de desenvolvimento: npm run start
 
-##LOCALHOST
+## LOCALHOST
 → Comando localhost API:  npm run start
 → Comando localhost WEB: npm run dev
 
-##MIGRATIONS
+## MIGRATIONS
 → db:migrate
 → db:rollback
 → db:createMigration

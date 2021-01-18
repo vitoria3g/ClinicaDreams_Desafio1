@@ -6,15 +6,16 @@ class customerServicesController {
   async create(req: Request, resp: Response) {
     
     const {client_create, services} = req.body; 
+    
      try {
       await knex.transaction(async trx => {
     
         const ids = await knex('customerService')
                           .insert({idCliente:client_create}, 'idCustomerService')
                           .transacting(trx)
-        
-        const dataResponsible = services.map((item_id: number) => { return {idService: item_id,idCustomer: ids[0],status: "P"}});
-                    await knex('customerAndService')
+        console.log(ids[0])
+        const dataResponsible = services.map((item_id: number) => { return {idService: item_id,idCustomer: ids[0],status: "P", totalMinutes: 0}});
+        await knex('customerAndService')
                           .insert(dataResponsible)
                           .transacting(trx)
         

@@ -1,6 +1,6 @@
 import React, {useState, useEffect}          from 'react';
 import {useHistory}                          from 'react-router-dom';
-import {Modal, Button, Form, Input, Select}  from 'antd';
+import {Modal, Button, Form, Input}          from 'antd';
 import api                                   from '../../../../services/api';
 
 const AssociatePerson = () => {
@@ -9,7 +9,7 @@ const AssociatePerson = () => {
 
   useEffect(async()=>{
     let responseUser = await api.get('/users', {headers:{typeUser: "R"}});
-    let responseService = await api.get('/services');
+    let responseService = await api.get('/services', {headers:{typeUser: "A"}});
     let user = responseUser.data;
     let service = responseService.data;
 
@@ -42,6 +42,7 @@ const AssociatePerson = () => {
       if(response.status === 200){
          setIsModalVisible(false);
          alert("representante vinculado");
+         history.goBack();
       }
     }
     catch(err)
@@ -56,16 +57,16 @@ const AssociatePerson = () => {
       <Form name="normal_login" className="login-form" initialValues={{remember: true}} onFinish={handleRegister}>
          <Form.Item name="idServices" rules={[{ required: true, message: "Selecione um serviço" }]}>
             <select id="slc_service">
-              <option value="0">-selecione-</option>
+              <option value="0">-selecione um serviço-</option>
             </select>
           </Form.Item>
           <Form.Item name="idResponsible" rules={[{ required: true, message: "Selecione um representante" }]}>
             <select id="slc_person">
-              <option value="0">-selecione-</option>
+              <option value="0">-selecione um representante-</option>
             </select>
           </Form.Item>
           <Form.Item name="salesCommission" rules={[{ required: true, message: "Informe a comissão do representante" }]}>
-            <Input type="number" placeholder="Valor da comissão" style={{borderRadius: "15px"}}/>
+            <Input type="number" placeholder="Valor da comissão %" style={{borderRadius: "15px"}}/>
           </Form.Item>
           <Form.Item>
             <Button htmlType="submit" className="button">

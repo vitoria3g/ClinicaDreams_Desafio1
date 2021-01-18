@@ -17,8 +17,8 @@ const Logon = () => {
          const {email, password} = event; 
          const data = {email, password}
          var response = await api.post('/authenticate', data);
+         console.log(response.data)
          if(response.status === 200){
-            
             localStorage.setItem('userId', response.data.user[0].idUser);
             localStorage.setItem('typeUser', response.data.user[0].typeUser);
             localStorage.setItem('token', response.data.token);

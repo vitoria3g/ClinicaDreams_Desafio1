@@ -19,8 +19,12 @@ const Registration = () => {
         if(response.status === 200){
             setIsModalVisible(false);
             alert("usuário criado");
-            localStorage.setItem('userId', response.data.idUser);
-            localStorage.setItem('typeUser', response.data.typeUser);
+
+            //SE O CADASTRO FOR FEITO NA TELA INICIAL
+            if(!localStorage.getItem('userId')){
+              localStorage.setItem('userId', response.data.idUser);
+              localStorage.setItem('typeUser', response.data.typeUser);
+            }
             history.push('/home');
          }
     }
@@ -46,7 +50,7 @@ const Registration = () => {
           {
             //CASO O USUÁRIO SEJA UM ADMINISTRADOR (ACESSO LIVRE)
             localStorage.getItem('typeUser') == "A" ? (
-              <Form.Item name="gender" rules={[{ required: true, message: "Selecione o nível de usuário" }]}>
+              <Form.Item name="typeUser" rules={[{ required: true, message: "Selecione o nível de usuário" }]}>
                 <Select placeholder="Selecione o nível do usuário" allowClear>
                   <Option value="A">Administrador</Option>
                   <Option value="R">Representante</Option>

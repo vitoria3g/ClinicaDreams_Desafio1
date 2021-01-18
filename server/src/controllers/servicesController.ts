@@ -3,7 +3,7 @@ import knex                from '../database/connection';
 
 class servicesController {
   async findServiceCustomer(req: Request, resp: Response){
-    const {iduser, typeuser,customer} = req.headers;
+    const {iduser, typeuser} = req.headers;
     const data = await knex('services') 
                       .leftJoin('customerAndService', 'customerAndService.idService', '=','services.idService')
                       .leftJoin('responsibleUser_service', 'responsibleUser_service.idServices', '=', 'services.idService')
@@ -17,13 +17,14 @@ class servicesController {
                         else if(typeuser == "R"){
                           queryBuilder.where('responsibleUser_service.idResponsible', iduser);
                         }
-                        if(customer){
-                          queryBuilder.where('customer_service.idCustomer', customer);
-                        }
                       })   
                       .then(function (results) {
-                          resp.send(results);
+                          return results;
+                      })
+                      .catch(function(err) {
+                        console.error(err.message);
                       });
+      console.log(data)
       return resp.json(data);
 
   }

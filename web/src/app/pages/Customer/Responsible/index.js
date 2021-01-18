@@ -9,9 +9,10 @@ const AssociatePerson = () => {
   const [customer, setCustomers] = useState([]);
 
   useEffect(async()=>{
-    const idUser = localStorage.getItem('userId');
+    const idUser   = localStorage.getItem('userId');
     const typeUser =  localStorage.getItem('typeUser');
     const header = {idUser, typeUser}
+
     var responseAtend = await api.get('/servicesCustomer',{headers:header});
 
     const person = responseAtend.data;
@@ -69,6 +70,7 @@ const AssociatePerson = () => {
         if(response.status === 200){
           setIsModalVisible(false);
           alert("Cadastro realizado");
+          history.goBack();
        }
        else{
           alert("Ocorreu um erro ao cadastrar atendimento");

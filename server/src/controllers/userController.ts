@@ -9,9 +9,11 @@ class usersControllers {
 
   async index(req: Request, resp: Response){
     const {typeuser} = req.headers;
+    console.log(typeuser)
     const users = await knex('users')
                         .where('typeUser', typeuser)
                         .select('idUser','name', 'email','typeUser','active', 'createAt').orderBy('createAt','typeUser')
+    console.log(users)
     return resp.json(users);
   }
 

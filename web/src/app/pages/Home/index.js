@@ -5,7 +5,7 @@ import MenuComponent                  from '../Components/Menu';
 import {Button, Tooltip, Drawer}      from 'antd';
 import {MenuOutlined}                 from '@ant-design/icons';
 import logoImg                        from '../../assets/dreams.png';
-
+import './style.scss';
 const UserPage = () => {
   const history = useHistory();
   const [visible, setVisible] = useState(true);
@@ -15,7 +15,7 @@ const UserPage = () => {
     if(!userId){
       history.push('/');
     }
-    const response = api.get('/users'); 
+    //const response = api.get('/users'); 
   },[])
 
   const showDrawer = () => {
